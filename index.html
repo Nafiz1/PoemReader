@@ -8,17 +8,20 @@
         <title>Document</title>
     </head>
     <body>
+        <audio id="myAudio" loop>
+            <source src="audio.m4a" />
+        </audio>
         Select Voice:
         <select id="voiceList"></select>
         <br /><br />
-
-        <h3 id="txtInput2">Go to sleep!</h3>
-        <p id="txtInput">
-            Click on the buttons below to listen to some relaxing poems and fall asleep.
-        </p>
+        <button id="btnSpeak">Read Poem</button>
+        <button id="btnChange">New Poem</button>
+        <button onclick="playAudio()" type="button">Play Music</button>
+        <button onclick="pauseAudio()" type="button">Pause Music</button>
         <br /><br />
-        <button id="btnSpeak">Speak!</button>
-        <button id="btnChange">change!</button>
+        <h3 id="txtInput2">Poem Reader</h3>
+        <p id="txtInput">Listen to random poems.</p>
     </body>
     <script src="poemscript.js"></script>
+    <script src="musicscript.js"></script>
 </html>
