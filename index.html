@@ -5,22 +5,56 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Document</title>
+        <title>Poem Reader</title>
     </head>
     <body>
         <audio id="myAudio" loop>
             <source src="audio.m4a" />
         </audio>
-        Select Voice:
-        <select id="voiceList"></select>
+        <div class="form-group">
+            <label>Select Voice:</label>
+            <select id="voiceList" class="form-control"></select>
+        </div>
+        <div class="form-group">
+            <label>Select Speed:</label>
+            <select id="myRange" class="form-control">
+                <option>0.5</option>
+                <option>0.7</option>
+                <option>0.9</option>
+                <option>1</option>
+                <option>1.5</option>
+                <option selected="selected">1.7</option>
+                <option>2</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Select Pitch:</label>
+            <select id="myPitchs" class="form-control">
+                <option>0.5</option>
+                <option selected="selected">0.7</option>
+                <option>0.9</option>
+                <option>1</option>
+                <option>1.5</option>
+                <option>1.7</option>
+                <option>2</option>
+            </select>
+        </div>
         <br /><br />
-        <button id="btnSpeak">Read Poem</button>
+        <button id="btnSpeak">Read</button>
+        <button id="btnPause">Pause</button>
+        <button id="btnResume">Resume</button>
+        <button id="btnStop">Stop</button>
+
         <button id="btnChange">New Poem</button>
         <button onclick="playAudio()" type="button">Play Music</button>
         <button onclick="pauseAudio()" type="button">Pause Music</button>
         <br /><br />
         <h3 id="txtInput2">Poem Reader</h3>
-        <p id="txtInput">Listen to random poems.</p>
+        <p id="txtInput">
+            A simple little website to listen to random poems.<br />
+            From the settings you can control the reader voice, speed, and pitch.<br />
+            You can also play and pause the music and reader.
+        </p>
     </body>
     <script src="poemscript.js"></script>
     <script src="musicscript.js"></script>

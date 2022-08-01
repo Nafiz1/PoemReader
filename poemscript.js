@@ -3,10 +3,16 @@ var txtInput2 = document.getElementById("txtInput2").innerText;
 var voiceList = document.querySelector("#voiceList");
 var btnSpeak = document.querySelector("#btnSpeak");
 var btnChange = document.querySelector("#btnChange");
+var slider = document.getElementById("myRange");
+var pitch = document.getElementById("myPitchs");
+var btnPause = document.querySelector("#btnPause");
+var btnResume = document.querySelector("#btnResume");
+var btnStop = document.querySelector("#btnStop");
 var synth = window.speechSynthesis;
 var voices = [];
 var myLines;
 var myTitle;
+var toSpeak;
 
 PopulateVoices();
 if (speechSynthesis !== undefined) {
@@ -34,19 +40,29 @@ fetchPoem = () => {
 fetchPoem();
 
 btnSpeak.addEventListener("click", () => {
-    var toSpeak = new SpeechSynthesisUtterance(txtInput);
+    toSpeak = new SpeechSynthesisUtterance(txtInput);
     var selectedVoiceName = voiceList.selectedOptions[0].getAttribute("data-name");
     voices.forEach((voice) => {
         if (voice.name === selectedVoiceName) {
             toSpeak.voice = voice;
         }
     });
-    toSpeak.pitch = 0.7;
-    toSpeak.rate = 1.7;
+    toSpeak.pitch = pitch.value;
+    toSpeak.rate = slider.value;
     synth.speak(toSpeak);
+    btnPause.addEventListener("click", () => {
+        synth.pause(toSpeak);
+    });
+    btnResume.addEventListener("click", () => {
+        synth.resume(toSpeak);
+    });
+    btnStop.addEventListener("click", () => {
+        synth.cancel(toSpeak);
+    });
 });
 
 btnChange.addEventListener("click", () => {
+    synth.cancel(toSpeak);
     fetchPoem();
     txtInput = myLines;
     document.getElementById("txtInput").innerHTML = myLines;
