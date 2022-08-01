@@ -25,12 +25,10 @@ fetchPoem = () => {
         .then((response) => {
             myTitle = response.data[0].title;
             myLines = response.data[0].lines
-                .join("<br>")
+                .join("<br />")
                 .replaceAll("-", "")
                 .replaceAll("—", "")
                 .replaceAll("_", "");
-            console.log(myLines);
-            console.log(myLines);
         })
         .catch((error) => {
             console.log(error);
