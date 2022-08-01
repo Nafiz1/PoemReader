@@ -10,14 +10,10 @@ var btnResume = document.querySelector("#btnResume");
 var btnStop = document.querySelector("#btnStop");
 var synth = window.speechSynthesis;
 var voices = [];
+const voiceSelect = document.querySelector("select");
 var myLines;
 var myTitle;
 var toSpeak;
-
-PopulateVoices();
-if (speechSynthesis !== undefined) {
-    speechSynthesis.onvoiceschanged = PopulateVoices;
-}
 
 fetchPoem = () => {
     axios
@@ -67,17 +63,26 @@ btnChange.addEventListener("click", () => {
     document.getElementById("txtInput2").innerHTML = myTitle;
 });
 
-function PopulateVoices() {
+function populateVoiceList() {
     voices = synth.getVoices();
-    var selectedIndex = voiceList.selectedIndex < 0 ? 0 : voiceList.selectedIndex;
-    voiceList.innerHTML = "";
-    voices.forEach((voice) => {
-        var listItem = document.createElement("option");
-        listItem.textContent = voice.name;
-        listItem.setAttribute("data-lang", voice.lang);
-        listItem.setAttribute("data-name", voice.name);
-        voiceList.appendChild(listItem);
-    });
 
-    voiceList.selectedIndex = selectedIndex;
+    for (let i = 0; i < voices.length; i++) {
+        const option = document.createElement("option");
+        option.textContent = `${voices[i].name} (${voices[i].lang})`;
+
+        if (voices[i].default) {
+            option.textContent += " — DEFAULT";
+        }
+
+        option.setAttribute("data-lang", voices[i].lang);
+        option.setAttribute("data-name", voices[i].name);
+        if (i < 5) {
+            voiceSelect.appendChild(option);
+        }
+    }
+}
+
+populateVoiceList();
+if (speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = populateVoiceList;
 }
