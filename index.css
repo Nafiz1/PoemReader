@@ -126,3 +126,7 @@ select:focus {
     color: var(--bkg-color1);
     background-color: var(--line-color);
 }
+
+#txtInput {
+    line-height: 2;
+}
