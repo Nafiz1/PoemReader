@@ -14,45 +14,47 @@
             <source src="audio.webm" />
         </audio>
         <div class="settings">
-            <div class="form-group">
-                <label>Select Voice:</label>
-                <select id="voiceList" class="form-control"></select>
-            </div>
-            <div class="form-group">
-                <label>Select Speed:</label>
-                <select id="myRange" class="form-control">
-                    <option>0.5</option>
-                    <option>0.7</option>
-                    <option>0.9</option>
-                    <option>1</option>
-                    <option>1.5</option>
-                    <option selected="selected">1.7</option>
-                    <option>2</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Select Pitch:</label>
-                <select id="myPitchs" class="form-control">
-                    <option>0.5</option>
-                    <option selected="selected">0.7</option>
-                    <option>0.9</option>
-                    <option>1</option>
-                    <option>1.5</option>
-                    <option>1.7</option>
-                    <option>2</option>
-                </select>
-            </div>
             <div>
+                <div class="form-group">
+                    <label class="voice-label">Select Voice:</label>
+                    <select id="voiceList" class="form-control"></select>
+                </div>
+                <div class="form-group">
+                    <label>Select Speed:</label>
+                    <select id="myRange" class="form-control">
+                        <option>0.5</option>
+                        <option>0.7</option>
+                        <option>0.9</option>
+                        <option>1</option>
+                        <option>1.5</option>
+                        <option selected="selected">1.7</option>
+                        <option>2</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Select Pitch:</label>
+                    <select id="myPitchs" class="form-control">
+                        <option>0.5</option>
+                        <option selected="selected">0.7</option>
+                        <option>0.9</option>
+                        <option>1</option>
+                        <option>1.5</option>
+                        <option>1.7</option>
+                        <option>2</option>
+                    </select>
+                </div>
+            </div>
+            <div class="buttons">
                 <button id="btnSpeak">Read</button>
                 <button id="btnPause">Pause</button>
                 <button id="btnResume">Resume</button>
                 <button id="btnStop">Stop</button>
             </div>
-            <div>
+            <div class="buttons">
                 <button onclick="playAudio()" type="button">Play Music</button>
                 <button onclick="pauseAudio()" type="button">Pause Music</button>
             </div>
-            <div>
+            <div class="buttons">
                 <button id="btnChange">New Poem</button>
                 <button class="btn-toggle">Dark Theme</button>
             </div>
