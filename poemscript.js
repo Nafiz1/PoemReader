@@ -15,9 +15,14 @@ var myLines;
 var myTitle;
 var toSpeak;
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+}
+
 fetchPoem = () => {
+    let a = getRandomInt(100) + 3;
     axios
-        .get("https://poetrydb.org/random")
+        .get("https://poetrydb.org/random,linecount/1;" + a.toString())
         .then((response) => {
             myTitle = response.data[0].title;
             myLines = response.data[0].lines
@@ -25,9 +30,11 @@ fetchPoem = () => {
                 .replaceAll("-", "")
                 .replaceAll("—", "")
                 .replaceAll("_", "");
+            console.log(response);
         })
         .catch((error) => {
             console.log(error);
+            fetchPoem();
         });
 };
 
