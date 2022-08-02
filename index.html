@@ -10,8 +10,8 @@
         <link rel="icon" type="image/x-icon" href="scrollicon.svg" />
     </head>
     <body>
-        <audio id="myAudio" autoplay loop>
-            <source src="audio.m4a" />
+        <audio id="myAudio" loop>
+            <source src="audio.webm" />
         </audio>
         <div class="settings">
             <div class="form-group">
@@ -52,7 +52,10 @@
                 <button onclick="playAudio()" type="button">Play Music</button>
                 <button onclick="pauseAudio()" type="button">Pause Music</button>
             </div>
-            <button id="btnChange">New Poem</button>
+            <div>
+                <button id="btnChange">New Poem</button>
+                <button class="btn-toggle">Dark Theme</button>
+            </div>
 
 
         </div>
@@ -74,4 +77,5 @@
     </body>
     <script src="poemscript.js"></script>
     <script src="musicscript.js"></script>
+    <script src="darkmode.js"></script>
 </html>
