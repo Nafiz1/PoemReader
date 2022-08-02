@@ -31,11 +31,7 @@ fetchPoem = () => {
         .then((response) => {
             myTitle = response.data[0].title;
             myAuthor = response.data[0].author;
-            myLines = response.data[0].lines
-                .join("\n")
-                .replaceAll("-", "")
-                .replaceAll("—", "")
-                .replaceAll("_", "");
+            myLines = response.data[0].lines.join("\n");
             // console.log(response)
         })
         .catch((error) => {
@@ -72,7 +68,11 @@ btnSpeak.addEventListener("click", () => {
 btnChange.addEventListener("click", () => {
     synth.cancel(toSpeak);
     fetchPoem();
-    txtInput = myLines.replaceAll("\n", " ");
+    txtInput = myLines
+        .replaceAll("\n", " ")
+        .replaceAll("-", "")
+        .replaceAll("—", "")
+        .replaceAll("_", "");
     document.getElementById("txtInput").innerHTML = myLines.replaceAll("\n", "<br />");
     document.getElementById("txtInput2").innerHTML = myTitle;
     document.getElementById("txtInput3").innerHTML = "By " + myAuthor;
