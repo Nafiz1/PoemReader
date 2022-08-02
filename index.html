@@ -10,55 +10,67 @@
         <link rel="icon" type="image/x-icon" href="scrollicon.svg" />
     </head>
     <body>
-        <audio id="myAudio" loop>
+        <audio id="myAudio" autoplay loop>
             <source src="audio.m4a" />
         </audio>
-        <div class="form-group">
-            <label>Select Voice:</label>
-            <select id="voiceList" class="form-control"></select>
-        </div>
-        <div class="form-group">
-            <label>Select Speed:</label>
-            <select id="myRange" class="form-control">
-                <option>0.5</option>
-                <option>0.7</option>
-                <option>0.9</option>
-                <option>1</option>
-                <option>1.5</option>
-                <option selected="selected">1.7</option>
-                <option>2</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Select Pitch:</label>
-            <select id="myPitchs" class="form-control">
-                <option>0.5</option>
-                <option selected="selected">0.7</option>
-                <option>0.9</option>
-                <option>1</option>
-                <option>1.5</option>
-                <option>1.7</option>
-                <option>2</option>
-            </select>
-        </div>
-        <button id="btnSpeak">Read</button>
-        <button id="btnPause">Pause</button>
-        <button id="btnResume">Resume</button>
-        <button id="btnStop">Stop</button>
+        <div class="settings">
+            <div class="form-group">
+                <label>Select Voice:</label>
+                <select id="voiceList" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label>Select Speed:</label>
+                <select id="myRange" class="form-control">
+                    <option>0.5</option>
+                    <option>0.7</option>
+                    <option>0.9</option>
+                    <option>1</option>
+                    <option>1.5</option>
+                    <option selected="selected">1.7</option>
+                    <option>2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Select Pitch:</label>
+                <select id="myPitchs" class="form-control">
+                    <option>0.5</option>
+                    <option selected="selected">0.7</option>
+                    <option>0.9</option>
+                    <option>1</option>
+                    <option>1.5</option>
+                    <option>1.7</option>
+                    <option>2</option>
+                </select>
+            </div>
+            <div>
+                <button id="btnSpeak">Read</button>
+                <button id="btnPause">Pause</button>
+                <button id="btnResume">Resume</button>
+                <button id="btnStop">Stop</button>
+            </div>
+            <div>
+                <button onclick="playAudio()" type="button">Play Music</button>
+                <button onclick="pauseAudio()" type="button">Pause Music</button>
+            </div>
+            <button id="btnChange">New Poem</button>
 
-        <button id="btnChange">New Poem</button>
-        <button onclick="playAudio()" type="button">Play Music</button>
-        <button onclick="pauseAudio()" type="button">Pause Music</button>
-        <br /><br />
-        <h3 id="txtInput2">Poem Reader</h3>
-        <h4 id="txtInput3">By Nafiz</h3>
-        <p id="txtInput">
-            A simple little website to listen to random poems.<br />
-            From the settings you can control the reader voice, speed, and pitch.<br />
-            You can also play and pause the music and reader.<br />
-            To begin click on new poem, and read.<br />
-            <i>BUG: google voices may not work properly on chrome.</i>
-        </p>
+
+        </div>
+        <div class="content" >
+            <div class="text" >
+                <h3 id="txtInput2">Poem Reader</h3>
+                <h4 id="txtInput3">By Nafiz</h3>
+                <p id="txtInput">
+                    A simple little website to listen to random poems.<br />
+                    From the settings you can control the reader voice, music, and more.<br />
+                    To begin click on new poem, and read.<br />
+                    <i>BUG: google voices may not work properly on chrome.</i>
+                </p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2022 Nafiz </p>
+        </div>
     </body>
     <script src="poemscript.js"></script>
     <script src="musicscript.js"></script>
