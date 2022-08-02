@@ -10,15 +10,15 @@ body {
     --line-color: rgb(0, 0, 0);
 }
 body.dark-theme {
-    --bkg-color1: #1c1c1c;
-    --bkg-color2: #121313;
+    --bkg-color1: #121313;
+    --bkg-color2: #1c1c1c;
     --line-color: rgb(255, 255, 255);
 }
 @media (prefers-color-scheme: dark) {
     /* defaults to dark theme */
     body {
-        --bkg-color1: #1c1c1c;
-        --bkg-color2: #121313;
+        --bkg-color1: #121313;
+        --bkg-color2: #1c1c1c;
         --line-color: rgb(255, 255, 255);
     }
     body.light-theme {
