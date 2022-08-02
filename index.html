@@ -59,9 +59,17 @@
                 <button class="btn-toggle">Dark Theme</button>
             </div>
 
-
         </div>
-        <div class="content" >
+
+        <div class="container">
+            <div class="buttons">
+                <button  type="button" class="button active" onclick="fontchange(18)">Small</button>
+                <button type="button" class="button" onclick="fontchange(23)">Medium</button>
+                <button  type="button" class="button" onclick="fontchange(27)">Large</button>
+            </div>
+        </div>
+
+        <div class="content" id="content">
             <div class="text" >
                 <h3 id="txtInput2">Poem Reader</h3>
                 <h4 id="txtInput3">By Nafiz</h3>
@@ -76,8 +84,10 @@
         <div class="copyright">
             <p>© 2022 Nafiz </p>
         </div>
+    
     </body>
     <script src="poemscript.js"></script>
     <script src="musicscript.js"></script>
     <script src="darkmode.js"></script>
+    <script src="size.js"></script>
 </html>
