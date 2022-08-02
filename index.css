@@ -5,7 +5,33 @@ h3 {
 }
 
 body {
+    --bkg-color1: #ffffff;
+    --bkg-color2: rgba(245, 245, 245, 0.984);
+    --line-color: rgb(0, 0, 0);
+}
+body.dark-theme {
+    --bkg-color1: #1c1c1c;
+    --bkg-color2: #121313;
+    --line-color: rgb(255, 255, 255);
+}
+@media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body {
+        --bkg-color1: #1c1c1c;
+        --bkg-color2: #121313;
+        --line-color: rgb(255, 255, 255);
+    }
+    body.light-theme {
+        --bkg-color1: #ffffff;
+        --bkg-color2: rgba(245, 245, 245, 0.984);
+        --line-color: rgb(0, 0, 0);
+    }
+}
+
+body {
     position: relative;
+    background-color: var(--bkg-color1);
+    color: var(--line-color);
 }
 
 .settings {
@@ -14,7 +40,7 @@ body {
     top: 0;
     border-style: solid;
     border-width: thin;
-    background: rgba(245, 245, 245, 0.984);
+    background-color: var(--bkg-color2);
     width: auto;
     display: flex;
     align-items: center;
