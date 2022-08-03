@@ -74,9 +74,9 @@ btnChange.addEventListener("click", () => {
     fetchPoem();
     txtInput = myLines
         .replaceAll("\n", " ")
-        .replaceAll("-", "")
-        .replaceAll("—", "")
-        .replaceAll("_", "");
+        .replaceAll("-", " ")
+        .replaceAll("—", " ")
+        .replaceAll("_", " ");
     document.getElementById("txtInput").innerHTML = myLines.replaceAll("\n", "<br />");
     document.getElementById("txtInput2").innerHTML = myTitle;
     document.getElementById("txtInput3").innerHTML = "By " + myAuthor;
