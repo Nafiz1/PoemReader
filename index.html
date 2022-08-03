@@ -8,6 +8,9 @@
         <title>Poem Reader</title>
         <link rel="stylesheet" href="index.css">
         <link rel="icon" type="image/x-icon" href="scroll.png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     </head>
     <body>
         <audio id="myAudio" loop>
@@ -25,9 +28,9 @@
                         <option>0.5</option>
                         <option>0.7</option>
                         <option>0.9</option>
-                        <option>1</option>
+                        <option selected="selected">1</option>
                         <option>1.2</option>
-                        <option selected="selected">1.5</option>
+                        <option>1.5</option>
                         <option>1.7</option>
                         <option>2</option>
                     </select>
@@ -36,10 +39,10 @@
                     <label>Select Pitch:</label>
                     <select id="myPitchs" class="form-control">
                         <option>0.5</option>
-                        <option selected="selected">0.7</option>
+                        <option>0.7</option>
                         <option>0.9</option>
                         <option>1</option>
-                        <option>1.2</option>
+                        <option selected="selected">1.2</option>
                         <option>1.5</option>
                         <option>1.7</option>
                         <option>2</option>
@@ -65,9 +68,10 @@
 
         <div class="container">
             <div class="buttons">
-                <button  type="button" class="button active" onclick="fontchange(18)">Small</button>
-                <button type="button" class="button" onclick="fontchange(23)">Medium</button>
-                <button  type="button" class="button" onclick="fontchange(27)">Large</button>
+                <button  type="button" class="button active" onclick="fontchange(14)">Small</button>
+                <button  type="button" class="button active" onclick="fontchange(18)">Medium</button>
+                <button type="button" class="button" onclick="fontchange(23)">Large</button>
+                <button  type="button" class="button" onclick="fontchange(27)">Huge</button>
             </div>
         </div>
 

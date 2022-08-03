@@ -40,6 +40,10 @@ fetchPoem = () => {
         });
 };
 
+window.onload = function () {
+    synth.cancel(toSpeak);
+};
+
 fetchPoem();
 
 btnSpeak.addEventListener("click", () => {
